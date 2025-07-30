@@ -2,7 +2,7 @@ import { images } from "@/constants";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-const CardButton = () => {
+const CartButton = () => {
   const totalItems = 10;
 
   return (
@@ -17,4 +17,4 @@ const CardButton = () => {
   );
 };
 
-export default CardButton;
+export default CartButton;
