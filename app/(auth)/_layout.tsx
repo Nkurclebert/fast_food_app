@@ -34,7 +34,7 @@ export default function AuthLayout() {
             resizeMode="stretch"
           />
           <Image
-            source={images.logo}
+            source={images.icon1}
             className="self-center size-48 absolute -bottom-16 z-10"
           />
         </View>

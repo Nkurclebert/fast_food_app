@@ -28,15 +28,23 @@ const useAuthStore = create<AuthState>((set) => ({
         set({ isLoading: true });
 
         try {
+            // Try to get the current user
             const user = await getCurrentUser();
 
-            if(user) set({ isAuthenticated: true, user: user as User });
+            if (user) set({ isAuthenticated: true, user: user as User });
             else set({ isAuthenticated: false, user: null });
-            
 
-        } catch (error) {
-            console.log('fetchAuthenticatedUser error:', error);
-            set({ isAuthenticated: false, user: null });
+        } catch (error: any) {
+            // If error is missing scope, treat as not authenticated
+            if (
+                error.message?.includes("missing scope") ||
+                error.message?.includes("session is prohibited")
+            ) {
+                set({ isAuthenticated: false, user: null });
+            } else {
+                console.log('fetchAuthenticatedUser error:', error);
+                set({ isAuthenticated: false, user: null });
+            }
         } finally {
             set({ isLoading: false });
         }

@@ -30,6 +30,7 @@ import coleslaw from "@/assets/images/coleslaw.png";
 import cucumber from "@/assets/images/cucumber.png";
 import emptyState from "@/assets/images/empty-state.png";
 import fries from "@/assets/images/fries.png";
+import icon1 from "@/assets/images/icon1.png";
 import loginGraphic from "@/assets/images/login-graphic.png";
 import logo from "@/assets/images/logo.png";
 import mozarellaSticks from "@/assets/images/mozarella-sticks.png";
@@ -169,6 +170,7 @@ export const images = {
     cucumber,
     emptyState,
     fries,
+    icon1,
     loginGraphic,
     logo,
     mozarellaSticks,
