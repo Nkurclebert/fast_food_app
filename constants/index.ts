@@ -1,6 +1,7 @@
 import arrowDown from "@/assets/icons/arrow-down.png";
 import arrowRight from "@/assets/icons/arrow-right.png";
 import bag from "@/assets/icons/bag.png";
+import bell from "@/assets/icons/bell.png";
 import check from "@/assets/icons/check.png";
 import clock from "@/assets/icons/clock.png";
 import dollar from "@/assets/icons/dollar.png";
@@ -9,6 +10,7 @@ import home from "@/assets/icons/home.png";
 import location from "@/assets/icons/location.png";
 import logout from "@/assets/icons/logout.png";
 import minus from "@/assets/icons/minus.png";
+import pen from "@/assets/icons/pen.png";
 import pencil from "@/assets/icons/pencil.png";
 import person from "@/assets/icons/person.png";
 import phone from "@/assets/icons/phone.png";
@@ -19,7 +21,9 @@ import trash from "@/assets/icons/trash.png";
 import user from "@/assets/icons/user.png";
 import arrowBack from "../assets/icons/arrow-back.png";
 
+
 import avatar from "@/assets/images/avatar.png";
+import avatar2 from "@/assets/images/avatar2.png";
 import avocado from "@/assets/images/avocado.png";
 import bacon from "@/assets/images/bacon.png";
 import burgerOne from "@/assets/images/burger-one.png";
@@ -201,4 +205,29 @@ export const images = {
     star,
     trash,
     user,
+    avatar2,
+};
+
+export const icons = {
+    arrowDown,
+    arrowRight,
+    bag,
+    check,
+    clock,
+    dollar,
+    envelope,
+    home,
+    location,
+    logout,
+    minus,
+    pencil,
+    person,
+    phone,
+    plus,
+    search,
+    star,
+    trash,
+    user,
+    bell,
+    pen,
 };

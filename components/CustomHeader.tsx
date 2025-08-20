@@ -1,10 +1,10 @@
 import { useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import { images } from "@/constants";
+import { icons, images } from "@/constants";
 import { CustomHeaderProps } from "@/type";
 
-const CustomHeader = ({ title }: CustomHeaderProps) => {
+const CustomHeader = ({ title, notification }: CustomHeaderProps) => {
   const router = useRouter();
 
   return (
@@ -18,8 +18,11 @@ const CustomHeader = ({ title }: CustomHeaderProps) => {
       </TouchableOpacity>
 
       {title && <Text className="base-semibold text-dark-100">{title}</Text>}
-
-      <Image source={images.search} className="size-5" resizeMode="contain" />
+      {notification ? (
+        <Image source={icons.bell} className="size-7" resizeMode="contain" />
+      ) : (
+        <Image source={images.search} className="size-5" resizeMode="contain" />
+      )}
     </View>
   );
 };

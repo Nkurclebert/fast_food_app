@@ -31,7 +31,10 @@ const Cart = () => {
   const totalPrice = getTotalPrice();
 
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView
+      className=" h-full"
+      style={{ flex: 1, backgroundColor: "#FE8C000D" }}
+    >
       <FlatList
         data={items}
         renderItem={({ item }) => <CartItem item={item} />}
@@ -42,7 +45,7 @@ const Cart = () => {
         ListFooterComponent={() =>
           totalItems > 0 && (
             <View className="gap-5">
-              <View className="mt-6 border border-gray-200 p-5 rounded-2xl">
+              <View className="mt-6  bg-white-100  p-5 rounded-2xl">
                 <Text className="h3-bold text-dark-100 mb-5">
                   Payment Summary
                 </Text>

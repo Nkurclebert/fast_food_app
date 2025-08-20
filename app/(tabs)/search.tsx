@@ -29,7 +29,10 @@ const Search = () => {
     refetch({ category, query, limit: 6 });
   }, [category, query]);
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView
+      className=" h-full"
+      style={{ flex: 1, backgroundColor: "#FE8C000D" }}
+    >
       <FlatList
         data={data}
         renderItem={({ item, index }) => {

@@ -73,6 +73,7 @@ interface CustomButtonProps {
 
 interface CustomHeaderProps {
     title?: string;
+    notification?: boolean;
 }
 
 interface CustomInputProps {
