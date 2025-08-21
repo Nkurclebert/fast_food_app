@@ -1,11 +1,70 @@
 import SettingsItem from "@/components/SettingsItem";
 import { icons, images } from "@/constants";
+import { logout } from "@/lib/appwrite";
+import { CustomButtonProps } from "@/type";
+import cn from "clsx";
 import { router } from "expo-router";
 import React from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+const EditButton = ({ onPress, textStyle, style }: CustomButtonProps) => {
+  return (
+    <TouchableOpacity
+      className={cn(
+        "custom-btn bg-white-100 border border-white-200 mb-5 mt-3",
+        style
+      )}
+      onPress={onPress}
+    >
+      <View className="flex-center flex-row">
+        <Text className={cn("text-white-200 font-bold", textStyle)}>
+          Edit Profile
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const LogOutButton = ({ onPress, textStyle, style }: CustomButtonProps) => {
+  return (
+    <TouchableOpacity
+      className={cn("custom-btn  border border-red-500 bg-red-200", style)}
+      onPress={onPress}
+    >
+      <View className="flex-center flex-row">
+        <Image source={icons.logout} className="size-5 mr-2" />
+        <Text
+          className={cn(
+            "text-red-500 text- paragraph-semibold font-bold",
+            textStyle
+          )}
+        >
+          Log Out
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
 const Profile = () => {
+  const handleLogout = async () => {
+    const result = await logout();
+
+    if (result) {
+      Alert.alert("Success", "You have been logged out successfully");
+      router.push("/(auth)/sign-in");
+    } else {
+      Alert.alert("Error", "An error occured while logging out");
+    }
+  };
   return (
     <SafeAreaView
       className=" h-full"
@@ -66,6 +125,9 @@ const Profile = () => {
             detail="456 Office Park, Kigali, Rwanda"
           />
         </View>
+
+        <EditButton />
+        <LogOutButton onPress={handleLogout} />
       </ScrollView>
     </SafeAreaView>
   );

@@ -114,3 +114,13 @@ export const getCategories = async () => {
         
     }
 }
+
+export async function logout() {
+    try {
+        await account.deleteSession('current')
+        return true;
+    } catch (error) {
+        console.error(error)
+        return false;
+    }
+}
