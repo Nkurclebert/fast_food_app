@@ -17,9 +17,9 @@ export const appwriteConfig = {
 export const client = new Client();
 
 client
-    .setEndpoint(appwriteConfig.endpoint)
-    .setProject(appwriteConfig.projectId)
-    .setPlatform(appwriteConfig.platform)
+    .setEndpoint(appwriteConfig.endpoint!)
+    .setProject(appwriteConfig.projectId!)
+    .setPlatform(appwriteConfig.platform!)
     
 export const account = new Account(client);
 export const databases = new Databases(client);
