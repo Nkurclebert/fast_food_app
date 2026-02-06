@@ -20,7 +20,7 @@ const EditButton = ({ onPress, textStyle, style }: CustomButtonProps) => {
     <TouchableOpacity
       className={cn(
         "custom-btn bg-white-100 border border-white-200 mb-5 mt-3",
-        style
+        style,
       )}
       onPress={onPress}
     >
@@ -44,7 +44,7 @@ const LogOutButton = ({ onPress, textStyle, style }: CustomButtonProps) => {
         <Text
           className={cn(
             "text-red-500 text- paragraph-semibold font-bold",
-            textStyle
+            textStyle,
           )}
         >
           Log Out
@@ -89,7 +89,7 @@ const Profile = () => {
         <View className="flex-row justify-center flex mt-5">
           <View className="flex flex-col items-center relative mt-5">
             <Image
-              source={images.avatar2}
+              source={images.avatar}
               className="size-36 relative rounded-full"
             />
             <TouchableOpacity className="absolute bottom-0 right-0">

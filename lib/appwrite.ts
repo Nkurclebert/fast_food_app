@@ -5,13 +5,13 @@ export const appwriteConfig = {
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT! ,
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     platform: "com.clebert.FoodOrdering",
-    databaseId: "687b75250009db76f32f",
-    bucketId: '68824788003dcc17da49',
-    userCollectionId: "687b7576000b279cf600",
-    categoriesCollectionId: '688242d6003c3e52f1bc',
-    menuCollectionId: '68879d730031973089b2',
-    customizationsCollectionId: '68824576000059ad722d',
-    menuCustomizationsCollectionId: '68879f7a0029dc30fd19'
+    databaseId: "68b4a966002ba4c4999f",
+    bucketId: '68b4b557000ce3730133',
+    userCollectionId: "user",
+    categoriesCollectionId: 'categories',
+    menuCollectionId: 'menu',
+    customizationsCollectionId: 'customizations',
+    menuCustomizationsCollectionId: 'menu_customizations'
 }
 
 export const client = new Client();

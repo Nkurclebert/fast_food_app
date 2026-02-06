@@ -63,9 +63,34 @@ const Details = () => {
         <View className="flex-1 pr-2">
           <Text className="text-2xl font-bold mb-4">{menuItem.name}</Text>
 
-          <Text className="text-base text-gray-600 mb-6">
-            {`${menuItem.rating}/5`}
-          </Text>
+          <View className="flex-row items-center mb-6">
+            {/* Render stars dynamically */}
+            {Array.from({ length: 5 }).map((_, index) => {
+              const starValue = index + 1;
+              const isFullStar = menuItem.rating >= starValue;
+              const isHalfStar =
+                menuItem.rating >= starValue - 0.5 &&
+                menuItem.rating < starValue;
+
+              return (
+                <Image
+                  key={index}
+                  source={
+                    isFullStar
+                      ? icons.fullStar
+                      : isHalfStar
+                        ? icons.halfStar
+                        : icons.emptyStar
+                  }
+                  className="w-4 h-4 mr-1"
+                  resizeMode="contain"
+                />
+              );
+            })}
+
+            {/* Display the rating text */}
+            <Text className="text-base text-gray-600 ml-2">{`${menuItem.rating}/5`}</Text>
+          </View>
 
           <Text className="text-2xl font-bold text-gray-800 mb-6">
             <Text className="color-white-200">$</Text>
@@ -80,7 +105,7 @@ const Details = () => {
 
             <View className="pl-2">
               <Text className="text-base text-gray-600">Protein</Text>
-              <Text className="text-lg font-bold">{`${menuItem.protien}g`}</Text>
+              <Text className="text-lg font-bold">{`${menuItem.protein}g`}</Text>
             </View>
           </View>
         </View>
